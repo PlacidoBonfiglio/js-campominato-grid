@@ -50,3 +50,17 @@ body {
     border: 2px solid black;
     cursor: pointer;
 }
+
+div .cells-s,
+div .cells-m,
+div .cells-l {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.clicked {
+    background-color: rgb(138, 237, 255);
+}
