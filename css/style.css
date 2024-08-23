@@ -16,8 +16,37 @@ form {
     align-items: center;
 }
 
-/* MAIN */
-main {
-    height: calc(100vh - 100px);
+/* BODY */
+body {
     background-color: #7FFFD4;
+}
+
+/* GRID */
+#grid {
+    height: 800px;
+    width: 800px;
+    margin: 80px auto;
+    background-color: #fff;
+    border: 5px solid black;
+}
+
+.cells-l {
+    height: calc(100% / 10);
+    flex-basis: calc(100% / 10);
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.cells-m {
+    height: calc(100% / 9);
+    flex-basis: calc(100% / 9);
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.cells-s {
+    height: calc(100% / 7);
+    flex-basis: calc(100% / 7);
+    border: 2px solid black;
+    cursor: pointer;
 }
