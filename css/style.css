@@ -30,30 +30,30 @@ body {
     border: 5px solid black;
 }
 
-.cells-l {
+.cell-l {
     height: calc(100% / 10);
     flex-basis: calc(100% / 10);
     border: 2px solid black;
     cursor: pointer;
 }
 
-.cells-m {
+.cell-m {
     height: calc(100% / 9);
     flex-basis: calc(100% / 9);
     border: 2px solid black;
     cursor: pointer;
 }
 
-.cells-s {
+.cell-s {
     height: calc(100% / 7);
     flex-basis: calc(100% / 7);
     border: 2px solid black;
     cursor: pointer;
 }
 
-div .cells-s,
-div .cells-m,
-div .cells-l {
+div .cell-s,
+div .cell-m,
+div .cell-l {
     display: flex;
     justify-content: center;
     align-items: center;
