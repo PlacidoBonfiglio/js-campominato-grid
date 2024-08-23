@@ -1,0 +1,23 @@
+/* HEADER */
+.navbar {
+    height: 100px;
+}
+
+header img {
+    height: 60px;
+}
+
+header h1 {
+    flex-grow: 1;
+}
+
+form {
+    justify-content: end;
+    align-items: center;
+}
+
+/* MAIN */
+main {
+    height: calc(100vh - 100px);
+    background-color: #7FFFD4;
+}
