@@ -49,18 +49,23 @@ let rows = 10;
 let cols = 10;
 const totalCells = rows * cols;
 
-// 
-if (difficulty === 'medium') {
-    rows = 9;
-    cols = 9;
-    totalCells;
-} else if (difficulty === 'hard') {
-    rows = 7;
-    cols = 7;
-    totalCells;
-}
+// Controllo in che valore del selected è l'utente
+// if (difficulty === 'medium') {
+//     rows = 9;
+//     cols = 9;
+//     totalCells;
+// } else if (difficulty === 'hard') {
+//     rows = 7;
+//     cols = 7;
+//     totalCells;
+// }
 
-totalCells;
+
+button.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    grid.classList.toggle('d-none');
+})
 
 
 // Ciclo for che calcola quante celle creare (100 o 81 o 49)
@@ -72,9 +77,12 @@ for (let i = 0; i < totalCells; i++) {
     // Aggiungo la classe per cambiare colore delle celle al click
     cell.addEventListener('click', () => {
         cell.classList.toggle('clicked');
+
+        
     })
 
     // Inserisco in pagina
     grid.appendChild(cell);
 }
+
 
