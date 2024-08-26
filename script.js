@@ -10,30 +10,13 @@ console.log('JS OK');
 
 
 // FUNZIONI
-// Creo una funzione per creare le celle della griglia con il contenuto (100 celle)
-const create100Cells = content => {
+// Creo una funzione per creare le celle
+const createCells = cellNumber => {
     const cell = document.createElement('div');
     cell.classList.add('cell-l');
-    cell.append(content);
+    cell.append(cellNumber);
     return cell;
 }
-// 81 celle
-const create81Cells = content => {
-    const cell = document.createElement('div');
-    cell.classList.add('cell-m');
-    cell.append(content);
-    return cell;
-}
-
-// 49 celle
-const create49Cells = content => {
-    const cell = document.createElement('div');
-    cell.classList.add('cell-s');
-    cell.append(content);
-    return cell;
-}
-
-
 
 //Recupero elementi dal DOM
 const form = document.querySelector('form');
@@ -48,41 +31,51 @@ const difficulty = select.value;
 let rows = 10;
 let cols = 10;
 const totalCells = rows * cols;
+console.log(totalCells);
 
-// Controllo in che valore del selected è l'utente
-// if (difficulty === 'medium') {
-//     rows = 9;
-//     cols = 9;
-//     totalCells;
-// } else if (difficulty === 'hard') {
-//     rows = 7;
-//     cols = 7;
-//     totalCells;
-// }
-
-
-button.addEventListener('click', function(e) {
+// Aggiungo un evento al bottone Play
+ const startGame = (e) => {
+    // Modifico il normale funzionamento del bottone dentro il form
     e.preventDefault();
 
-    grid.classList.toggle('d-none');
-})
+    // Al click del pulsante play/try again viene svuotata la griglia
+    grid.innerHTML = '';
 
+    // Una volta premuto il pulsante play compare al suo interno la scritta try again
+    button.innerText = 'Try again';
 
-// Ciclo for che calcola quante celle creare (100 o 81 o 49)
+    // Controllo in che valore del selected è l'utente    
+    if (difficulty === 'medium') {
+        rows = 9;
+        cols = 9;
+    } else if (difficulty === 'hard') {
+        rows = 7;
+        cols = 7;
+    }
+
+    totalCells;
+    console.log(totalCells);
+    
+    // Ciclo for che calcola quante celle creare (100 o 81 o 49)
 for (let i = 0; i < totalCells; i++) {
     
     // Creo le celle
-    const cell = create100Cells(i + 1);
+    const cell = createCells(i + 1);
 
-    // Aggiungo la classe per cambiare colore delle celle al click
+    // Aggiungo la classe per cambiare colore delle celle al click della cella
     cell.addEventListener('click', () => {
-        cell.classList.toggle('clicked');
+    cell.classList.add('clicked');
 
-        
+    // Vedo in console quale cella ha cliccato l'utente
+    console.log(i + 1);
     })
 
     // Inserisco in pagina
     grid.appendChild(cell);
+    }
 }
+
+form.addEventListener('submit', startGame);
+
 
 
