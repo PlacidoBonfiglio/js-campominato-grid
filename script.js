@@ -11,9 +11,9 @@ console.log('JS OK');
 
 // FUNZIONI
 // Creo una funzione per creare le celle
-const createCells = cellNumber => {
+const createCells = (cellNumber, difficulty) => {
     const cell = document.createElement('div');
-    cell.classList.add('cell-l');
+    cell.classList.add('cell', difficulty);
     cell.append(cellNumber);
     return cell;
 }
@@ -23,12 +23,6 @@ const form = document.querySelector('form');
 const grid = document.getElementById('grid');
 const select = document.querySelector('select');
 const button = document.querySelector('button');
-
-// Selettore difficoltà
-const difficulty = select.value;
-
-
-
 
 // Aggiungo un evento al bottone Play
  const startGame = (e) => {
@@ -40,6 +34,9 @@ const difficulty = select.value;
 
     // Una volta premuto il pulsante play compare al suo interno la scritta try again
     button.innerText = 'Try again';
+
+    // Selettore difficoltà
+    const difficulty = select.value;
 
     // Dati della griglia
     let rows = 10;
@@ -54,6 +51,7 @@ const difficulty = select.value;
         cols = 7;
     }
 
+    // Calcolo le celle totali
     const totalCells = rows * cols;
     console.log(totalCells);
     
@@ -61,7 +59,7 @@ const difficulty = select.value;
     for (let i = 0; i < totalCells; i++) {
     
         // Creo le celle
-        const cell = createCells(i + 1);
+        const cell = createCells(i + 1, difficulty);
 
         // Aggiungo la classe per cambiare colore delle celle al click della cella
         cell.addEventListener('click', () => {
