@@ -53,22 +53,21 @@ console.log(totalCells);
         cols = 7;
     }
 
-    totalCells;
     console.log(totalCells);
     
     // Ciclo for che calcola quante celle creare (100 o 81 o 49)
-for (let i = 0; i < totalCells; i++) {
+    for (let i = 0; i < totalCells; i++) {
     
-    // Creo le celle
-    const cell = createCells(i + 1);
+        // Creo le celle
+        const cell = createCells(i + 1);
 
-    // Aggiungo la classe per cambiare colore delle celle al click della cella
-    cell.addEventListener('click', () => {
-    cell.classList.add('clicked');
+        // Aggiungo la classe per cambiare colore delle celle al click della cella
+        cell.addEventListener('click', () => {
+        cell.classList.add('clicked');
 
-    // Vedo in console quale cella ha cliccato l'utente
-    console.log(i + 1);
-    })
+        // Vedo in console quale cella ha cliccato l'utente
+        console.log(i + 1);
+        })
 
     // Inserisco in pagina
     grid.appendChild(cell);
