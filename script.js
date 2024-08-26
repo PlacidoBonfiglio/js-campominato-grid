@@ -27,11 +27,8 @@ const button = document.querySelector('button');
 // Selettore difficoltà
 const difficulty = select.value;
 
-// Dati della griglia
-let rows = 10;
-let cols = 10;
-const totalCells = rows * cols;
-console.log(totalCells);
+
+
 
 // Aggiungo un evento al bottone Play
  const startGame = (e) => {
@@ -44,6 +41,10 @@ console.log(totalCells);
     // Una volta premuto il pulsante play compare al suo interno la scritta try again
     button.innerText = 'Try again';
 
+    // Dati della griglia
+    let rows = 10;
+    let cols = 10;
+
     // Controllo in che valore del selected è l'utente    
     if (difficulty === 'medium') {
         rows = 9;
@@ -53,6 +54,7 @@ console.log(totalCells);
         cols = 7;
     }
 
+    const totalCells = rows * cols;
     console.log(totalCells);
     
     // Ciclo for che calcola quante celle creare (100 o 81 o 49)

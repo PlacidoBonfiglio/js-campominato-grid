@@ -11,6 +11,12 @@ header h1 {
     flex-grow: 1;
 }
 
+/* FORM */
+
+select {
+    cursor: pointer;
+}
+
 form {
     justify-content: end;
     align-items: center;
